@@ -1,12 +1,11 @@
 import Marca from "../models/Marca.js";
-import User from "../models/User.js";
 
 export const createMarca = async (req, res) => {
   try {
-    const { name, time, type, products } = req.body;
+    const { name, pfp, prods } = req.body;
 
     const marca = await Marca.create({
-      name, time, type, products,
+      name, pfp, prods,
       author: req.userId
     });
 
@@ -28,11 +27,11 @@ export const getUserMarcas = async (req, res) => {
 export const updateMarca = async (req, res) => {
   try {
     const { id } = req.params;
-    const { name, time, type, products } = req.body;
+    const { name, pfp, prods  } = req.body;
 
     const updatedMarca = await Marca.findByIdAndUpdate(
       id,
-      { name, time, type, products },
+      { name, pfp, prods  },
       { new: true }
     );
 

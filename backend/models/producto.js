@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const productoSchema = new mongoose.Schema(
   {
-    brand: { type: mongoose.Schema.Types.ObjectId, ref: "Brand", required: true },
+    brand: { type: mongoose.Schema.Types.ObjectId, ref: "Marca", required: true },
     name: { type: String, required: true },
     image: { type: Image},
     desc: { type: String, required: true },
@@ -12,7 +12,7 @@ const productoSchema = new mongoose.Schema(
     formato: { type: String, required: true, enum: ['crema','gel','leche','spray', 'serum', 'aceite', 'loción', 'en polvo'] },
     tipo: { type: String, required: true, enum: ['skincare', 'haircare'] },
     para: { type: String, required: true, enum: ['oleosa', 'mixta', 'seca', 'sensible'] },
-    rating: { type: Number, min: 1, max: 5  }, //como hacemos q funque estoooooo??!!
+    rating: { type: undefined  }, //como hacemos q funque estoooooo??!!
     compra: { type: Array },
   },
   { timestamps: true }
