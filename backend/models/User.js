@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema(
     followers: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
     following: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }]
   },
-  { timestamps: true } // ✅ esto va fuera del objeto anterior
+  { timestamps: true } // esto va fuera del objeto anterior
 );
 
 const User = mongoose.models.User || mongoose.model("User", userSchema);

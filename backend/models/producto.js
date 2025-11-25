@@ -4,7 +4,7 @@ const productoSchema = new mongoose.Schema(
   {
     brand: { type: mongoose.Schema.Types.ObjectId, ref: "Marca", required: true },
     name: { type: String, required: true },
-    image: { type: Image},
+    image: { type: Image },
     desc: { type: String, required: true },
     ingredients: { type: array },
     activos: { type: array },
