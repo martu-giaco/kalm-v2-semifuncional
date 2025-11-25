@@ -9,17 +9,13 @@ export const createMarca = async (req, res) => {
       author: req.userId
     });
 
-    await User.findByIdAndUpdate(req.userId, {
-      $push: { marcas: marca._id }
-    });
-
     res.status(201).json(marca);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 };
 
-export const getUserMarcas = async (req, res) => {
+export const getMarcas = async (req, res) => {
   const marcas = await Marca.find({ author: req.params.userId }).sort({ createdAt: -1 });
   res.json(marcas);
 };
